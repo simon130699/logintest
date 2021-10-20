@@ -3,6 +3,7 @@ import './Login.css';
 import Label from './components/label/Label';
 import Title from './components/title/title';
 import Input from './components/input/Input';
+import { FaUser } from "react-icons/fa";
 
 const Login = () => {
 
@@ -54,28 +55,36 @@ const Login = () => {
     
 
     return (
+        <div className="padre-container">
         <div className="login-container">
-           <Title text='soy un titulo' />
+           <Title text='Bienvenido!' />
+           
            {hasError &&
             <label className="label-alert"> Su contraseña o usuario son incorrectos </label>
             }
-            <Label text='Usuario' />
+           
             <Input
-            attribute={{
+             
+            
+            attribute ={{
                 id: 'usuario', 
                 name: 'usuario',
                 type: 'text',
-                placeholder: 'ingrese su usuario'
+                placeholder: 'usuario'
             }}
+            
             handleChange={handleChange}
             />
-            <Label text='Contraseña' />
-            <Input
+            
+            <Input 
+           
+            
             attribute={{
+                
                 id: 'contraseña', 
                 name: 'contraseña',
                 type: 'password',
-                placeholder: 'ingrese su contraseña'
+                placeholder: 'contraseña'
             }}
             handleChange={handleChange}
             param={passwordError}
@@ -88,7 +97,9 @@ const Login = () => {
             <button onClick={(e) => handleSubmit()}>
                 ingresar
             </button>
+            
 
+        </div>
         </div>
     )
 }
